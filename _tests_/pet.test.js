@@ -8,9 +8,9 @@ describe('constructor', () => {
 
 describe('constructor', () => {
   it('sets the name property', () => {
-    const pet = new Pet('Fido');
+    const pet = new Pet('fido');
 
-    expect(pet.name).toEqual('Fido');
+    expect(pet.name).toEqual('fido');
     expect(pet.hunger).toEqual(0);
     expect(pet.fitness).toEqual(10);
   });
@@ -18,7 +18,7 @@ describe('constructor', () => {
 
 describe('growUp', () => {
   it('has a initial age of 0', () => {
-    const pet = new Pet('Fido');
+    const pet = new Pet('fido');
 
     expect(pet.age).toEqual(0);
   });
@@ -26,7 +26,7 @@ describe('growUp', () => {
 
 describe('growUp and getting unhealthier', () => {
   it('increases the age of our pet by 1', () => {
-    const pet = new Pet('Fido');
+    const pet = new Pet('fido');
     pet.growUp();
 
     expect(pet.age).toEqual(1);
@@ -35,7 +35,7 @@ describe('growUp and getting unhealthier', () => {
   });
 
   it("growup does not function if pet is not alive" ,() => {
-    const pet = new Pet("Fido");
+    const pet = new Pet("fido");
     pet.age = 30;
     expect(() => pet.growUp()).toThrow("your pet is no longer alive :(");
   });
@@ -51,7 +51,7 @@ describe('walk', () => {
     expect(pet.fitness).toEqual(10);
   });
   it("walk does not function if pet is not alive" ,() => {
-    const pet = new Pet("Fido");
+    const pet = new Pet("fido");
     pet.fitness = -1;
     expect(() => pet.walk()).toThrow("your pet is no longer alive :(");
   });
