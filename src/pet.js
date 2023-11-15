@@ -6,6 +6,7 @@ function Pet(name) {
    this.age = 0;
    this.hunger = MIN_HUNGER;
    this.fitness = MAXIMUM_FITNESS;
+   this.children = [];
   };
 
 Pet.prototype = {
@@ -55,6 +56,14 @@ Pet.prototype.walk = function() {
     } else {
         return 'I feel great';
     }
+  };
+
+  Pet.prototype.adoptChild = function (child) {
+    this.children.push(child);
+  };
+
+  Pet.prototype.haveBaby = function (babyName) { 
+    this.children.push(new Pet(babyName));
   };
 
 

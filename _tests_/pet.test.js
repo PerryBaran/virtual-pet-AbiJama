@@ -128,4 +128,28 @@ describe('death', () => {
     pet.age = 30;
     expect(pet.isAlive).toEqual(false);
   });
-})
+
+describe('Pet Adoption', () => {
+  it('Parent pet adopts a child', () => {
+    const parentPet = new Pet('Dave');
+    const childPet = new Pet('Amelia')
+    
+    parentPet.adoptChild(childPet);
+    
+    expect(parentPet.children[0]).toEqual(childPet);
+  });
+
+  it("haveBaby", () => {
+    const parent = new Pet("Thom");
+    
+    expect(parent.children).toEqual([]);
+  });
+
+  it("haveBaby", () => {
+    const parent = new Pet("Thom");
+    parent.haveBaby("Annie");
+
+    expect(parent.children[0].name).toEqual("Annie");
+  });
+});
+});
